@@ -4,7 +4,7 @@ import allProducts from "../../data";
 const initialState = {
   products: allProducts,
   amount: 0,
-  total: 0,
+  total: 30,
   price: 0,
 };
 
