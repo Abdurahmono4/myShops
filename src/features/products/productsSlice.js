@@ -4,7 +4,7 @@ import allProducts from "../../data";
 const initialState = {
   products: allProducts,
   amount: 0,
-  total: 30,
+  total: 0,
   price: 0,
 };
 
@@ -32,7 +32,7 @@ export const productsSlice = createSlice({
     calculateTotal: (state) => {
       let price = 0;
       let amount = 0;
-      let total = 0;
+      let total = 30;
 
       state.products.forEach((product) => {
         amount = product.amount;
