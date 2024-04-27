@@ -1,4 +1,5 @@
 // ProductsList.js
+// import { totalAmount } from "./features/products/productsSlice";
 
 import React from "react";
 import productsData from "../data"; // Import your exported default information
@@ -9,13 +10,14 @@ function ProductsList() {
       {productsData.map((product) => (
         <div className="card card-side bg-base-100 shadow-xl" key={product.id}>
           <figure>
-            <img src={product.thumbnail} alt="Movie" />
+            <img src={product.thumbnail} alt="Movie" className="w-86 h-86 " />
           </figure>
           <div className="card-body">
             <h2 className="card-title">{product.title}</h2>
-            <p>Price: ${product.price}</p>
+            <p className="text-2xl">Price: ${product.price}</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Watch</button>
+              <button className="btn btn-primary">Add to bucket</button>
+              <button className="btn btn-secondary">Remove</button>
             </div>
           </div>
         </div>

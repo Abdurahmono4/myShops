@@ -1,8 +1,8 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import { calculateTotal } from "./features/products/productsSlice";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+
 import ProductsList from "./components/ProductsList";
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
         <span className="">Total Price:</span>
         <span className="">{useSelector((state) => state.products.total)}</span>
         <span className="">$ .00</span>
+        <span className=""></span>
       </p>
 
       <h1>Counter</h1>
