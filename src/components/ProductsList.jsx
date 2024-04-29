@@ -7,14 +7,14 @@ import {
 } from "../features/products/productsSlice.js";
 
 import React from "react";
-import productsData from "../data"; // Import your exported default information
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 function ProductsList() {
+  const { products } = useSelector((state) => state.products);
   const dispatch = useDispatch();
   return (
     <div className="flex py-4 mb-10 container gap-8 flex-col">
-      {productsData.map((product) => (
+      {products.map((product) => (
         <div className="card card-side bg-base-100 shadow-xl" key={product.id}>
           <figure>
             <img src={product.thumbnail} alt="Movie" className="w-86 h-86 " />
@@ -30,7 +30,7 @@ function ProductsList() {
                 }}
               >
                 -
-              </button> 
+              </button>
               <p className="font-bold text-2xl">{product.amount}</p>
               <button
                 className="btn btn-info "
@@ -42,7 +42,7 @@ function ProductsList() {
               </button>
             </div>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Add to bucket</button>
+              <button className="btn btn-primary ">Add to bucket</button>
               <button
                 className="btn btn-secondary"
                 onClick={() => {

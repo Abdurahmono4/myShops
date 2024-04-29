@@ -28,6 +28,12 @@ export const productsSlice = createSlice({
     },
 
     removeItem: (state, { payload }) => {
+      state.products = state.products.filter((product) => {
+        return product.id != payload;
+      });
+
+      console.log(state.products);
+
       productsSlice.caseReducers.calculateTotal(state);
     },
     calculateTotal: (state) => {
